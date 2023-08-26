@@ -1,11 +1,11 @@
 import webpack from 'webpack';
 import path from 'path';
-
 import { BuildOptions } from "./types";
-import { buildLoaders, buildPlugins, buildResolves} from './index';
+import { buildLoaders, buildPlugins, buildResolves, buildDevServer } from './index';
+
 
 export function buildWebpackConfig(options: BuildOptions): webpack.Configuration {
-    const {paths, mode} = options;
+    const {paths, mode, isDev} = options;
     return {
         mode,
     entry: paths.entry,
@@ -19,6 +19,8 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
         },
         plugins: buildPlugins(paths),
         resolve: buildResolves(),
+        devtool: isDev ? "eval-source-map" : undefined,
+        devServer: isDev ? buildDevServer(options): undefined,   
     }
     
 };
