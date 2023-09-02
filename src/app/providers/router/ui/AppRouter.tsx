@@ -8,8 +8,20 @@ const AppRouter = () => {
     return (
         <Suspense fallback={<div>Loading...</div>}>
             <Routes>
-                <Route path={routeConfig.main.path} element={<MainPage />} />
-                <Route path={routeConfig.about.path} element={<AboutPage />} />
+                <Route 
+                path={routeConfig.main.path} 
+                element={
+                    <div 
+                        className="page-wrapper">
+                        <MainPage />
+                    </div>} />
+                <Route 
+                    path={routeConfig.about.path} 
+                    element={
+                    <div 
+                        className="page-wrapper">
+                            <AboutPage />
+                    </div>} />
             </Routes>
             </Suspense>
     );
