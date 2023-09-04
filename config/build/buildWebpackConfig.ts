@@ -17,7 +17,7 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
         module: {
             rules: buildLoaders(options),
         },
-        plugins: buildPlugins(paths),
+        plugins: buildPlugins(options),
         resolve: buildResolves(options),
         devtool: isDev ? "eval-source-map" : undefined,
         devServer: isDev ? buildDevServer(options): undefined,   
