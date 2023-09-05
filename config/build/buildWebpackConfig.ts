@@ -1,16 +1,17 @@
 import webpack from 'webpack';
 import path from 'path';
-import { BuildOptions } from "./types";
-import { buildLoaders, buildPlugins, buildResolves, buildDevServer } from './index';
-
+import { BuildOptions } from './types';
+import {
+    buildLoaders, buildPlugins, buildResolves, buildDevServer,
+} from './index';
 
 export function buildWebpackConfig(options: BuildOptions): webpack.Configuration {
-    const {paths, mode, isDev} = options;
+    const { paths, mode, isDev } = options;
     return {
         mode,
-    entry: paths.entry,
+        entry: paths.entry,
         output: {
-            filename: "[name].[contenthash].js",
+            filename: '[name].[contenthash].js',
             path: paths.build,
             clean: true,
         },
@@ -19,8 +20,7 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
         },
         plugins: buildPlugins(options),
         resolve: buildResolves(options),
-        devtool: isDev ? "eval-source-map" : undefined,
-        devServer: isDev ? buildDevServer(options): undefined,   
-    }
-    
-};
+        devtool: isDev ? 'eval-source-map' : undefined,
+        devServer: isDev ? buildDevServer(options) : undefined,
+    };
+}

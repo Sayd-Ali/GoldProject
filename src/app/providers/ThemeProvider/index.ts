@@ -6,4 +6,4 @@ export {
     ThemeProvider,
     useTheme,
     Theme,
-}
+};
