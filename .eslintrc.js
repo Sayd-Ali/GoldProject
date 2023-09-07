@@ -1,7 +1,10 @@
+const { single } = require("rxjs");
+
 module.exports = {
     env: {
         browser: true,
         es2021: true,
+        jest: true,
     },
     extends: [
         'plugin:react/recommended',
@@ -40,6 +43,7 @@ module.exports = {
         'eol-last': 'off',
         'react/no-unused-prop-types': 'warn',
         'i18next/no-literal-string': ['error', { markupOnly: true }],
+        'max-len': ['error', { code: 120, ignoreComments: true }],
     },
     globals: {
         __IS_DEV__: true,
