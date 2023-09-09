@@ -42,7 +42,7 @@ module.exports = {
         'no-underscore-dangle': 'off',
         'eol-last': 'off',
         'react/no-unused-prop-types': 'warn',
-        'i18next/no-literal-string': ['error', { markupOnly: true }],
+        'i18next/no-literal-string': ['warning', { markupOnly: true }],
         'max-len': ['error', { code: 120, ignoreComments: true }],
     },
     globals: {

@@ -24,7 +24,7 @@ describe('classNames', () => {
 
     test('with mods undefined', () => {
         const expected = 'someClass overprice hovered';
-        expect(classNames('someClass', { hovered: true, scrollable: false }, ['overprice']))
+        expect(classNames('someClass', { hovered: true, scrollable: undefined }, ['overprice']))
             .toBe(expected);
     });
 });
