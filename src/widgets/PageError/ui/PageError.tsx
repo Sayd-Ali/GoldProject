@@ -1,5 +1,5 @@
-import { useTranslation } from "react-i18next";
-import { classNames } from "shared/lib";
+import { useTranslation } from 'react-i18next';
+import { classNames } from 'shared/lib';
 import { Button } from 'shared/ui';
 import cls from './PageError.module.scss';
 
@@ -12,7 +12,7 @@ export const PageError = ({ className }: PageErrorProps) => {
 
     const reloadPage = () => {
         location.reload();
-    }
+    };
 
     return (
         <div className={classNames(cls.PageError, {}, [className])}>
@@ -21,5 +21,5 @@ export const PageError = ({ className }: PageErrorProps) => {
                 {t('Обновить страницу')}
             </Button>
         </div>
-    )
-}
+    );
+};

@@ -42,10 +42,23 @@ module.exports = {
         'no-underscore-dangle': 'off',
         'eol-last': 'off',
         'react/no-unused-prop-types': 'warn',
-        'i18next/no-literal-string': ['warning', { markupOnly: true }],
+        'i18next/no-literal-string': ['error',
+            {
+                markupOnly: true,
+                "ignoreAttribute": ["data-testid"]
+            }
+        ],
         'max-len': ['error', { code: 120, ignoreComments: true }],
     },
     globals: {
         __IS_DEV__: true,
     },
+    overrides: [
+        {
+            files: ['**/src/**/*.test.{ts,tsx}'],
+            rules: {
+                'i18next/no-literal-string': 'off',
+            }
+        }
+    ]
 };

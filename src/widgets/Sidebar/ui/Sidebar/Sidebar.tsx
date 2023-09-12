@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { classNames } from 'shared/lib';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { LangSwitcher } from 'widgets/LangSwitcher/LangSwitcher';
+import { Button } from 'shared/ui';
 import cls from './Sidebar.module.scss';
 
 interface SidebarProps {
@@ -15,13 +16,18 @@ export const Sidebar = ({ className }: SidebarProps) => {
     };
 
     return (
-        <div className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}>
-            <button
-                type="button"
+        <div
+            data-testid="sidebar"
+            className={
+                classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])
+            }
+        >
+            <Button
+                data-testid="sidebar-toggle"
                 onClick={handleCollapsed}
             >
                 toggle
-            </button>
+            </Button>
             <div className={cls.switchers}>
                 <ThemeSwitcher />
                 <LangSwitcher className={cls.lang} />
