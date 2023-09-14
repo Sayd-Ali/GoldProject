@@ -4,7 +4,7 @@ import { BuildOptions } from './types';
 
 export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     const babelLoader = {
-        test: /\.(js|ts|tsx)$/,
+        test: /\.(js|jsx|tsx)$/,
         exclude: /node_modules/,
         use: {
             loader: 'babel-loader',

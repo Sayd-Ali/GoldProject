@@ -11,7 +11,7 @@
     "lint:ts": "npx eslint \"**/*.{ts,tsx}\"",
     "lint:ts:fix": "npx eslint \"**/*.{ts,tsx}\" --fix",
     "lint:scss": "npx stylelint \"**/*.module.scss\"",
-    "lint:scss:fix": "npx stylelint \"**/*.module.scss\"",
+    "lint:scss:fix": "npx stylelint \"**/*.module.scss\" --fix",
     "unit": "jest --config ./config/jest/jest.config.ts"
   },
   "keywords": [],
