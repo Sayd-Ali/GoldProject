@@ -45,10 +45,10 @@ module.exports = {
             'error',
             {
                 markupOnly: true,
-                ignoreAttribute: ['data-testid'],
+                ignoreAttribute: ['data-testid', 'to'],
             },
         ],
-        'max-len': ['error', { code: 120, ignoreComments: true }],
+        'max-len': ['error', { ignoreComments: true, code: 100 }],
     },
     globals: {
         __IS_DEV__: true,

@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib';
+import { classNames } from 'shared/lib/classNames/classNames';
 
 describe('classNames', () => {
     test('with only first param', () => {
@@ -6,25 +6,35 @@ describe('classNames', () => {
     });
 
     test('with additional class', () => {
-        const expected = 'someClass overprice';
-        expect(classNames('someClass', {}, ['overprice'])).toBe(expected);
+        const expected = 'someClass class1 class2';
+        expect(classNames('someClass', {}, ['class1', 'class2']))
+            .toBe(expected);
     });
 
     test('with mods', () => {
-        const expected = 'someClass overprice hovered scrollable';
-        expect(classNames('someClass', { hovered: true, scrollable: true }, ['overprice']))
-            .toBe(expected);
+        const expected = 'someClass class1 class2 hovered scrollable';
+        expect(classNames(
+            'someClass',
+            { hovered: true, scrollable: true },
+            ['class1', 'class2'],
+        )).toBe(expected);
     });
 
     test('with mods false', () => {
-        const expected = 'someClass overprice hovered';
-        expect(classNames('someClass', { hovered: true, scrollable: false }, ['overprice']))
-            .toBe(expected);
+        const expected = 'someClass class1 class2 hovered';
+        expect(classNames(
+            'someClass',
+            { hovered: true, scrollable: false },
+            ['class1', 'class2'],
+        )).toBe(expected);
     });
 
     test('with mods undefined', () => {
-        const expected = 'someClass overprice hovered';
-        expect(classNames('someClass', { hovered: true, scrollable: undefined }, ['overprice']))
-            .toBe(expected);
+        const expected = 'someClass class1 class2 hovered';
+        expect(classNames(
+            'someClass',
+            { hovered: true, scrollable: undefined },
+            ['class1', 'class2'],
+        )).toBe(expected);
     });
 });
