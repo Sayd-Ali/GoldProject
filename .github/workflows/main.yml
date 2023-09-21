@@ -1,8 +1,10 @@
 name: linting, testing,building
 on:
   push:
-    branches: [ main ]
-  pull_request: [ main ]
+    branches:
+      -main
+  pull_request:
+    -main
   tags:
     - v[0-9]+.[0-9]+.[0-9]+*
 jobs:
